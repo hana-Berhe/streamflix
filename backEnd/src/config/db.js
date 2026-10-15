@@ -17,6 +17,8 @@ const db = mysql.createPool({
   charset: 'utf8mb4',
   timezone: 'Z', // store and read timestamps as UTC
   enableKeepAlive: true,
+  // Encrypted, verified connection when a CA certificate is provided (required by Aiven).
+  ssl: config.db.sslCa ? { ca: config.db.sslCa, rejectUnauthorized: true } : undefined,
 });
 
 export const pingDatabase = async () => {

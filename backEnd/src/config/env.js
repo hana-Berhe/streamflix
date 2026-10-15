@@ -73,6 +73,9 @@ const config = {
     password: read('DB_PASSWORD', { fallback: '' }),
     database: read('DB_NAME', { required: true }),
     connectionLimit: readInt('DB_CONNECTION_LIMIT', 10),
+    // Cloud databases (e.g. Aiven) need SSL: paste their CA certificate here.
+    // Literal "\n" sequences are turned back into line breaks.
+    sslCa: read('DB_SSL_CA')?.replace(/\\n/g, '\n'),
   },
 
   gemini: {
