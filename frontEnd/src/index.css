@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --nf-bg: #141414;
+  --nf-black: #000;
+  --nf-red: #e50914;
+  --nf-red-dark: #c11119;
+  --nf-surface: #181818;
+  --nf-surface-raised: #2f2f2f;
+  --nf-text: #fff;
+  --nf-muted: #b3b3b3;
+  --nf-faint: #808080;
+  --nf-green: #46d369;
+  --nf-gutter: 4%;
+  --nf-header-height: 68px;
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: var(--nf-text);
+  background: var(--nf-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--nf-bg);
+  overflow-x: hidden;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--nf-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

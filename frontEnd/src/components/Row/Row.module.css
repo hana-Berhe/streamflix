@@ -1,0 +1,142 @@
+.row {
+  position: relative;
+  margin-bottom: 3vw;
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 0 var(--nf-gutter);
+  margin-bottom: 10px;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1rem, 1.4vw, 1.4rem);
+  font-weight: 700;
+  color: #e5e5e5;
+}
+
+.swiper {
+  padding: 0 var(--nf-gutter) !important;
+}
+
+.swiper :global(.swiper-button-prev),
+.swiper :global(.swiper-button-next) {
+  top: 0;
+  bottom: 0;
+  height: auto;
+  margin-top: 0;
+  width: var(--nf-gutter);
+  min-width: 36px;
+  color: #fff;
+  background: rgba(20, 20, 20, 0.6);
+  opacity: 0;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.swiper :global(.swiper-button-prev) {
+  left: 0;
+  border-radius: 0 4px 4px 0;
+}
+
+.swiper :global(.swiper-button-next) {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+.swiper :global(.swiper-button-prev:hover),
+.swiper :global(.swiper-button-next:hover) {
+  background: rgba(20, 20, 20, 0.8);
+}
+
+.swiper :global(.swiper-button-prev svg),
+.swiper :global(.swiper-button-next svg) {
+  width: 14px;
+  height: 24px;
+  transition: transform 0.15s ease;
+}
+
+.swiper :global(.swiper-button-prev:hover svg),
+.swiper :global(.swiper-button-next:hover svg) {
+  transform: scale(1.25);
+}
+
+.swiper :global(.swiper-button-disabled) {
+  display: none;
+}
+
+.row:hover .swiper :global(.swiper-button-prev),
+.row:hover .swiper :global(.swiper-button-next) {
+  opacity: 1;
+}
+
+@media (hover: none) {
+  .swiper :global(.swiper-button-prev),
+  .swiper :global(.swiper-button-next) {
+    display: none;
+  }
+}
+
+/* Top 10: big outlined numbers next to each poster */
+.top10 {
+  display: flex;
+  align-items: flex-end;
+}
+
+.rank {
+  flex: 0 0 48%;
+  margin-right: -6%;
+  font-size: clamp(7rem, 14vw, 13rem);
+  font-weight: 900;
+  line-height: 0.75;
+  letter-spacing: -0.06em;
+  text-align: right;
+  color: var(--nf-bg);
+  -webkit-text-stroke: 3px #595959;
+  user-select: none;
+}
+
+.top10Card {
+  flex: 0 0 58%;
+  position: relative;
+}
+
+.skeletons {
+  display: flex;
+  gap: 8px;
+  padding: 0 var(--nf-gutter);
+  overflow: hidden;
+}
+
+.skeleton {
+  flex: 0 0 calc((100% - 6 * 8px) / 6.3);
+  aspect-ratio: 2 / 3;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #1f1f1f 0%, #2a2a2a 50%, #1f1f1f 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .skeleton {
+    flex-basis: calc((100% - 3 * 8px) / 3.3);
+  }
+}
+
+/* Older Swiper versions draw the arrow with a font glyph instead of an SVG */
+.swiper :global(.swiper-button-prev::after),
+.swiper :global(.swiper-button-next::after) {
+  font-size: 22px;
+  font-weight: 900;
+}

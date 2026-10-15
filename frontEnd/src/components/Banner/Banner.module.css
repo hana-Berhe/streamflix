@@ -1,0 +1,142 @@
+.banner {
+  position: relative;
+  height: 56.25vw;
+  min-height: 460px;
+  max-height: 92vh;
+  color: #fff;
+  overflow: hidden;
+  background: var(--nf-bg);
+}
+
+.loading {
+  background: linear-gradient(180deg, #1c1c1c, var(--nf-bg));
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.shadeLeft {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(77deg, rgba(0, 0, 0, 0.6) 0%, transparent 85%);
+}
+
+.shadeBottom {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 14.7vw;
+  background: linear-gradient(
+    180deg,
+    rgba(20, 20, 20, 0) 0%,
+    rgba(20, 20, 20, 0.15) 15%,
+    rgba(20, 20, 20, 0.6) 55%,
+    var(--nf-bg) 100%
+  );
+}
+
+.content {
+  position: absolute;
+  left: var(--nf-gutter);
+  bottom: 35%;
+  width: min(36%, 560px);
+  min-width: 300px;
+  z-index: 1;
+}
+
+.title {
+  margin: 0 0 1.2vw;
+  font-size: clamp(2rem, 4.4vw, 4.6rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+}
+
+.overview {
+  margin: 0 0 1.5vw;
+  font-size: clamp(0.9rem, 1.2vw, 1.3rem);
+  line-height: 1.35;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+}
+
+.buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.play,
+.info {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  border-radius: 4px;
+  padding: 0.6em 1.8em 0.6em 1.4em;
+  font-size: clamp(0.95rem, 1.2vw, 1.2rem);
+  font-weight: 700;
+  transition: background 0.15s ease;
+}
+
+.play {
+  background: #fff;
+  color: #000;
+}
+
+.play:hover {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.info {
+  background: rgba(109, 109, 110, 0.7);
+  color: #fff;
+}
+
+.info:hover {
+  background: rgba(109, 109, 110, 0.4);
+}
+
+.maturity {
+  position: absolute;
+  right: 0;
+  bottom: 35%;
+  padding: 0.4em 3.5vw 0.4em 0.8em;
+  border-left: 3px solid #dcdcdc;
+  background: rgba(51, 51, 51, 0.6);
+  font-size: max(12px, 1.1vw);
+}
+
+@media (max-width: 800px) {
+  .banner {
+    height: 78vh;
+  }
+
+  .content {
+    left: 0;
+    right: 0;
+    bottom: 18%;
+    width: auto;
+    min-width: 0;
+    padding: 0 var(--nf-gutter);
+    text-align: center;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .overview {
+    display: none;
+  }
+
+  .maturity {
+    display: none;
+  }
+}

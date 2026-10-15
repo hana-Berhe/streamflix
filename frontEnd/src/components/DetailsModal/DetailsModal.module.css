@@ -1,0 +1,306 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 32px 16px;
+  animation: fade 0.2s ease-out;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+}
+
+.dialog {
+  position: relative;
+  width: min(850px, 100%);
+  margin: 0 auto;
+  background: var(--nf-surface);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.75);
+  animation: lift 0.25s ease-out;
+}
+
+@keyframes lift {
+  from {
+    transform: translateY(24px) scale(0.97);
+  }
+}
+
+.hero {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.heroShade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, var(--nf-surface) 0%, transparent 55%);
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: var(--nf-surface);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.heroContent {
+  position: absolute;
+  left: 48px;
+  right: 48px;
+  bottom: 6%;
+}
+
+.title {
+  margin: 0 0 20px;
+  max-width: 70%;
+  font-size: clamp(1.6rem, 4vw, 2.8rem);
+  font-weight: 900;
+  line-height: 1;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+}
+
+.heroActions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.play {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 1.8em 0 1.4em;
+  height: 42px;
+  border: none;
+  border-radius: 4px;
+  background: #fff;
+  color: #000;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.play:hover {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.body {
+  padding: 0 48px 40px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  color: #bcbcbc;
+  margin: 12px 0 8px;
+}
+
+.match {
+  color: var(--nf-green);
+  font-weight: 700;
+}
+
+.year {
+  margin-left: 8px;
+  color: #bcbcbc;
+}
+
+.box {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 0 6px;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.maturityLine {
+  margin-bottom: 16px;
+}
+
+.reason {
+  margin: 0 0 12px;
+  padding-left: 12px;
+  border-left: 3px solid var(--nf-red);
+  color: #e5e5e5;
+  font-size: 0.95rem;
+}
+
+.tagline {
+  margin: 0 0 8px;
+  font-style: italic;
+  color: var(--nf-muted);
+}
+
+.overview {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.error {
+  color: #e87c03;
+  font-size: 0.9rem;
+}
+
+.facts,
+.about {
+  margin: 12px 0 0;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.facts div,
+.about div {
+  margin-bottom: 8px;
+}
+
+.facts dt,
+.about dt {
+  display: inline;
+  color: #777;
+  margin-right: 4px;
+}
+
+.facts dd,
+.about dd {
+  display: inline;
+  margin: 0;
+  color: #ddd;
+}
+
+.section {
+  margin-top: 48px;
+}
+
+.sectionTitle {
+  margin: 0 0 20px;
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.sectionTitle strong {
+  font-weight: 700;
+}
+
+.similarGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.similar {
+  background: var(--nf-surface-raised);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.similarMedia {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  border: none;
+  background: #000;
+  color: #fff;
+}
+
+.similarMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.similarTitle {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-align: left;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
+}
+
+.similarBody {
+  padding: 12px;
+}
+
+.similarMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.similarOverview {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #d2d2d2;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 700px) {
+  .overlay {
+    padding: 0;
+  }
+
+  .dialog {
+    border-radius: 0;
+    min-height: 100%;
+  }
+
+  .heroContent {
+    left: 16px;
+    right: 16px;
+  }
+
+  .title {
+    max-width: 100%;
+  }
+
+  .body {
+    padding: 0 16px 32px;
+  }
+
+  .columns {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
