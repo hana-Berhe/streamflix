@@ -22,12 +22,10 @@ export const request = async (path, options = {}) => {
     if (response.status === 401 && !options.skipAuthEvent) {
       window.dispatchEvent(new Event(AUTH_EXPIRED_EVENT));
     }
-    // Backend error shape: { message, code?, errors?: [{ field, message }], requestId }
-    const error = new Error(data.message || "Something went wrong. Try again.");
+    // Backend error shape: { msg, code? }
+    const error = new Error(data.msg || "Something went wrong. Try again.");
     error.status = response.status;
     error.code = data.code;
-    error.errors = data.errors || [];
-    error.requestId = data.requestId;
     throw error;
   }
 
